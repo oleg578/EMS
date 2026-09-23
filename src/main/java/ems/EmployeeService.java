@@ -1,6 +1,5 @@
 package ems;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -20,14 +19,13 @@ public class EmployeeService {
         return repository.findAll();
     }
 
-    public List<Manager> getManagers() {
-        List<Manager> managers = new ArrayList<>();
-        for (Employee employee : repository.findAll()) {
-            if (employee instanceof Manager manager) {
-                managers.add(manager);
-            }
-        }
-        return List.copyOf(managers);
+    /** Returns employees of the given role, e.g. {@code getEmployeesByRole(Manager.class)}. */
+    public <T extends Employee> List<T> getEmployeesByRole(Class<T> role) {
+        Objects.requireNonNull(role, "role must not be null");
+        return repository.findAll().stream()
+                .filter(role::isInstance)
+                .map(role::cast)
+                .toList();
     }
 
     public Payroll getPayroll() {
@@ -35,7 +33,7 @@ public class EmployeeService {
     }
 
     public Payroll getManagersPayroll() {
-        return new Payroll(List.copyOf(getManagers()));
+        return new Payroll(List.copyOf(getEmployeesByRole(Manager.class)));
     }
 
     /** Gives a raise to the employee with the given name. Fails if not found. */
