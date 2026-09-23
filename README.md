@@ -10,6 +10,6 @@
 ## Run
 
 ```bash
-mvn test                                              # 47 unit tests
+mvn test                                              # 50 unit tests
 mvn package -DskipTests && java -cp target/classes ems.Main   # demo
 ```
