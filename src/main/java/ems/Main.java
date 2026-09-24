@@ -7,10 +7,8 @@ public class Main {
     public static void main(String[] args) {
         EmployeeService service = new EmployeeService(new InMemoryEmployeeRepository());
         PayrollPrinter printer = new PayrollPrinter(System.out);
-        service.addEmployee(new Developer("Alice", 5000.575));
-        service.addEmployee(new Developer("Bob", 4500.00));
-        service.addEmployee(new Manager("Carol", 7000.00));
-        service.addEmployee(new Manager("Dave", 6500.00));
+
+        loadStaff(service);
 
         System.out.println("=== Payroll ===");
         printer.print(service.getPayroll());
@@ -29,5 +27,12 @@ public class Main {
         System.out.println();
         System.out.println("=== Developers ===");
         printer.print(new Payroll(List.copyOf(service.getEmployeesByRole(Developer.class))));
+    }
+
+    public static void loadStaff(EmployeeService srv) {
+        srv.addEmployee(new Developer("Alice", 5000.575));
+        srv.addEmployee(new Developer("Bob", 4500.00));
+        srv.addEmployee(new Manager("Carol", 7000.00));
+        srv.addEmployee(new Manager("Dave", 6500.00));
     }
 }
