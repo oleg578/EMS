@@ -11,8 +11,9 @@ public final class Ems {
         printer = new PayrollPrinter(System.out);
     }
 
-    public void loadStaff(List<Employee> employeeList) {
+    public Ems loadStaff(List<Employee> employeeList) {
         employeeList.forEach(service::addEmployee);
+        return this;
     }
 
     private void raise() {

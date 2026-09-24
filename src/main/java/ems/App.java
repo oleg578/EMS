@@ -14,7 +14,6 @@ public class App {
         ));
 
         Ems ems = new Ems();
-        ems.loadStaff(staff);
-        ems.run();
+        ems.loadStaff(staff).run();
     }
 }
