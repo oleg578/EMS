@@ -32,10 +32,6 @@ public class EmployeeService {
         return new Payroll(repository.findAll());
     }
 
-    public Payroll getManagersPayroll() {
-        return new Payroll(List.copyOf(getEmployeesByRole(Manager.class)));
-    }
-
     /** Gives a raise to the employee with the given name. Fails if not found. */
     public void giveRaise(String name, double percent) {
         Employee employee = repository.findByName(name)

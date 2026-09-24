@@ -1,5 +1,7 @@
 package ems;
 
+import java.util.List;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -22,6 +24,10 @@ public class Main {
 
         System.out.println();
         System.out.println("=== Managers ===");
-        printer.print(service.getManagersPayroll());
+        printer.print(new Payroll(List.copyOf(service.getEmployeesByRole(Manager.class))));
+
+        System.out.println();
+        System.out.println("=== Developers ===");
+        printer.print(new Payroll(List.copyOf(service.getEmployeesByRole(Developer.class))));
     }
 }
