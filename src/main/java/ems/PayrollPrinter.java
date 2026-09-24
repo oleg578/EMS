@@ -23,8 +23,9 @@ public class PayrollPrinter {
         this.out = Objects.requireNonNull(out, "out must not be null");
     }
 
-    public void print(Payroll payroll) {
+    public void print(Payroll payroll, String title) {
         Objects.requireNonNull(payroll, "payroll must not be null");
+        out.println(title);
         for (Employee employee : payroll.employees()) {
             out.printf(Locale.ROOT, ROW_FORMAT, employee.getRole(), fitName(employee.getName()), employee.getSalary());
         }

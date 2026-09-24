@@ -11,5 +11,5 @@
 
 ```bash
 mvn test                                              # 50 unit tests
-mvn package -DskipTests && java -cp target/classes ems.Main   # demo
+mvn package -DskipTests && java -cp target/classes ems.App   # demo
 ```
