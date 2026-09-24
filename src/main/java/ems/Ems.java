@@ -22,21 +22,21 @@ public final class Ems {
     }
 
     public void run() {
-        printer.print(service.getPayroll(), "\n=== Payroll ===\n");
+        printer.print(service.getPayroll(), "\n=== Payroll ===");
         raise();
 
         printer.print(
                 service.getPayroll(),
-                "\n=== Payroll after raises (Alice +10%, everyone +5%) ===\n");
+                "\n=== Payroll after raises (Alice +10%, everyone +5%) ===");
 
         printer.print(
                 new Payroll(
                         List.copyOf(service.getEmployeesByRole(Manager.class))),
-                "\n=== Managers ===\n");
+                "\n=== Managers ===");
 
         printer.print(
                 new Payroll(List.copyOf(service.getEmployeesByRole(Developer.class))),
-                "\n=== Developers ===\n");
+                "\n=== Developers ===");
     }
 
 }
