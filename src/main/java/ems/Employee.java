@@ -10,14 +10,14 @@ public abstract sealed class Employee permits Developer, Manager {
 
     protected Employee(String name, double salary) {
         Objects.requireNonNull(name, "name must not be null");
+        if (name.isBlank()) {
+            throw new IllegalArgumentException("name must not be blank");
+        }
         if (!Double.isFinite(salary)) {
             throw new IllegalArgumentException("salary must be a finite number, got: " + salary);
         }
         double roundedSalary = Math.round(salary * 100.00) / 100.00;
         validateSalary(roundedSalary);
-        if (name.isBlank()) {
-            throw new IllegalArgumentException("name must not be blank");
-        }
         this.name = name;
         this.salary = roundedSalary;
     }
