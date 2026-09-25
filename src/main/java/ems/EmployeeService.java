@@ -14,7 +14,8 @@ public class EmployeeService {
     public void addEmployee(Employee employee) {
         repository.add(employee);
     }
-
+    //TODO: make  a desition for delete this method or use it
+    @Deprecated
     public List<Employee> getEmployees() {
         return repository.findAll();
     }
