@@ -40,7 +40,7 @@ public abstract sealed class Employee permits Developer, Manager {
     public double getSalary() {
         return salary;
     }
-
+    // TODO: move to EmployeeUtils
     /**
      * Returns a copy of this employee with the salary raised by the given percentage, e.g. 10 means +10%.
      * This employee is not changed.
@@ -54,7 +54,7 @@ public abstract sealed class Employee permits Developer, Manager {
         // The constructor rounds to cents and validates the limit
         return withSalary(salary * (1 + percent / 100));
     }
-
+    // TODO: move to EmployeeUtils
     /** Creates an employee of the same role and name with the given salary. */
     protected abstract Employee withSalary(double salary);
 
