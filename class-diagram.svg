@@ -1,0 +1,178 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2217" height="2306" viewBox="0 0 2217 2306">
+<style>
+.cn { font: bold 20px "DejaVu Sans"; fill: #1e293b; text-anchor: middle; }
+.st { font: 15px "DejaVu Sans"; fill: #475569; text-anchor: middle; }
+.m { font: 15px "DejaVu Sans Mono"; fill: #1e293b; }
+.lb { font: 14px "DejaVu Sans"; fill: #334155; }
+.lh { font: bold 18px "DejaVu Sans"; fill: #1e293b; }
+</style>
+<defs>
+<marker id="open" markerWidth="14" markerHeight="14" refX="12" refY="7" orient="auto" markerUnits="userSpaceOnUse">
+<path d="M1,1 L12,7 L1,13" fill="none" stroke="#334155" stroke-width="1.6"/></marker>
+<marker id="tri" markerWidth="24" markerHeight="24" refX="22" refY="12" orient="auto" markerUnits="userSpaceOnUse">
+<path d="M2,2 L22,12 L2,22 Z" fill="#ffffff" stroke="#334155" stroke-width="1.6"/></marker>
+<marker id="dia" markerWidth="30" markerHeight="16" refX="27" refY="8" orient="auto-start-reverse" markerUnits="userSpaceOnUse">
+<path d="M1,8 L14,2 L27,8 L14,14 Z" fill="#ffffff" stroke="#334155" stroke-width="1.6"/></marker>
+</defs>
+<rect width="100%" height="100%" fill="#ffffff"/>
+<rect x="880" y="30" width="332" height="52" fill="#eef2ff"/>
+<rect x="880" y="30" width="332" height="106" fill="none" stroke="#334155" stroke-width="1.6"/>
+<text x="1046.0" y="63" class="cn">App</text>
+<line x1="880" y1="82" x2="1212" y2="82" stroke="#334155" stroke-width="1.6"/>
+<line x1="880" y1="100" x2="1212" y2="100" stroke="#334155" stroke-width="1.6"/>
+<text x="896" y="124" class="m" text-decoration="underline">+ main(args: String[]) : void</text>
+<rect x="880" y="200" width="457" height="74" fill="#eef2ff"/>
+<rect x="880" y="200" width="457" height="242" fill="none" stroke="#334155" stroke-width="1.6"/>
+<text x="1108.44" y="226" class="st">«final»</text>
+<text x="1108.44" y="255" class="cn">Ems</text>
+<line x1="880" y1="274" x2="1337" y2="274" stroke="#334155" stroke-width="1.6"/>
+<text x="896" y="298" class="m">- service : EmployeeService</text>
+<text x="896" y="322" class="m">- printer : PayrollPrinter</text>
+<line x1="880" y1="334" x2="1337" y2="334" stroke="#334155" stroke-width="1.6"/>
+<text x="896" y="358" class="m">+ Ems()</text>
+<text x="896" y="382" class="m">+ loadStaff(employeeList: List&lt;Employee&gt;) : Ems</text>
+<text x="896" y="406" class="m">- raise() : void</text>
+<text x="896" y="430" class="m">+ run() : void</text>
+<rect x="90" y="520" width="629" height="52" fill="#eef2ff"/>
+<rect x="90" y="520" width="629" height="268" fill="none" stroke="#334155" stroke-width="1.6"/>
+<text x="404.32" y="553" class="cn">EmployeeService</text>
+<line x1="90" y1="572" x2="719" y2="572" stroke="#334155" stroke-width="1.6"/>
+<text x="106" y="596" class="m">- repository : EmployeeRepository</text>
+<line x1="90" y1="608" x2="719" y2="608" stroke="#334155" stroke-width="1.6"/>
+<text x="106" y="632" class="m">+ EmployeeService(repository: EmployeeRepository)</text>
+<text x="106" y="656" class="m">+ addEmployee(employee: Employee) : void</text>
+<text x="106" y="680" class="m">+ getEmployees() : List&lt;Employee&gt;  {deprecated}</text>
+<text x="106" y="704" class="m">+ getEmployeesByRole&lt;T extends Employee&gt;(role: Class&lt;T&gt;) : List&lt;T&gt;</text>
+<text x="106" y="728" class="m">+ getPayroll() : Payroll</text>
+<text x="106" y="752" class="m">+ giveRaise(name: String, percent: double) : void</text>
+<text x="106" y="776" class="m">+ giveRaiseToAll(percent: double) : void</text>
+<rect x="1560" y="520" width="457" height="52" fill="#eef2ff"/>
+<rect x="1560" y="520" width="457" height="316" fill="none" stroke="#334155" stroke-width="1.6"/>
+<text x="1788.44" y="553" class="cn">PayrollPrinter</text>
+<line x1="1560" y1="572" x2="2017" y2="572" stroke="#334155" stroke-width="1.6"/>
+<text x="1576" y="596" class="m" text-decoration="underline">- ROLE_WIDTH : int = 20</text>
+<text x="1576" y="620" class="m" text-decoration="underline">- NAME_WIDTH : int = 20</text>
+<text x="1576" y="644" class="m" text-decoration="underline">- ELLIPSIS : String = &quot;...&quot;</text>
+<text x="1576" y="668" class="m" text-decoration="underline">- AMOUNT_WIDTH : int = 16</text>
+<text x="1576" y="692" class="m" text-decoration="underline">- ROW_FORMAT : String</text>
+<text x="1576" y="716" class="m" text-decoration="underline">- TOTAL_FORMAT : String</text>
+<text x="1576" y="740" class="m">- out : PrintStream</text>
+<line x1="1560" y1="752" x2="2017" y2="752" stroke="#334155" stroke-width="1.6"/>
+<text x="1576" y="776" class="m">+ PayrollPrinter(out: PrintStream)</text>
+<text x="1576" y="800" class="m">+ print(payroll: Payroll, title: String) : void</text>
+<text x="1576" y="824" class="m" text-decoration="underline">- fitName(name: String) : String</text>
+<rect x="90" y="1000" width="457" height="74" fill="#eef2ff"/>
+<rect x="90" y="1000" width="457" height="224" fill="none" stroke="#334155" stroke-width="1.6"/>
+<text x="318.43999999999994" y="1026" class="st">«interface»</text>
+<text x="318.43999999999994" y="1055" class="cn" font-style="italic">EmployeeRepository</text>
+<line x1="90" y1="1074" x2="547" y2="1074" stroke="#334155" stroke-width="1.6"/>
+<line x1="90" y1="1092" x2="547" y2="1092" stroke="#334155" stroke-width="1.6"/>
+<text x="106" y="1116" class="m" font-style="italic">+ add(employee: Employee) : void</text>
+<text x="106" y="1140" class="m" font-style="italic">+ update(employee: Employee) : void</text>
+<text x="106" y="1164" class="m" font-style="italic">+ updateAll(employees: List&lt;Employee&gt;) : void</text>
+<text x="106" y="1188" class="m" font-style="italic">+ findAll() : List&lt;Employee&gt;</text>
+<text x="106" y="1212" class="m" font-style="italic">+ findByName(name: String) : Optional&lt;Employee&gt;</text>
+<rect x="1400" y="1000" width="357" height="74" fill="#eef2ff"/>
+<rect x="1400" y="1000" width="357" height="194" fill="none" stroke="#334155" stroke-width="1.6"/>
+<text x="1578.72" y="1026" class="st">«record»</text>
+<text x="1578.72" y="1055" class="cn">Payroll</text>
+<line x1="1400" y1="1074" x2="1757" y2="1074" stroke="#334155" stroke-width="1.6"/>
+<text x="1416" y="1098" class="m">- employees : List&lt;Employee&gt;</text>
+<line x1="1400" y1="1110" x2="1757" y2="1110" stroke="#334155" stroke-width="1.6"/>
+<text x="1416" y="1134" class="m">+ Payroll(employees: List&lt;Employee&gt;)</text>
+<text x="1416" y="1158" class="m">+ employees() : List&lt;Employee&gt;</text>
+<text x="1416" y="1182" class="m">+ total() : double</text>
+<rect x="50" y="1420" width="520" height="52" fill="#eef2ff"/>
+<rect x="50" y="1420" width="520" height="244" fill="none" stroke="#334155" stroke-width="1.6"/>
+<text x="310.08" y="1453" class="cn">InMemoryEmployeeRepository</text>
+<line x1="50" y1="1472" x2="570" y2="1472" stroke="#334155" stroke-width="1.6"/>
+<text x="66" y="1496" class="m">- employeesByName : Map&lt;String, Employee&gt;</text>
+<line x1="50" y1="1508" x2="570" y2="1508" stroke="#334155" stroke-width="1.6"/>
+<text x="66" y="1532" class="m">+ add(employee: Employee) : void</text>
+<text x="66" y="1556" class="m">+ update(employee: Employee) : void</text>
+<text x="66" y="1580" class="m">+ updateAll(employees: List&lt;Employee&gt;) : void</text>
+<text x="66" y="1604" class="m">+ findAll() : List&lt;Employee&gt;</text>
+<text x="66" y="1628" class="m">+ findByName(name: String) : Optional&lt;Employee&gt;</text>
+<text x="66" y="1652" class="m">- requireStoredWithSameRole(employee: Employee) : void</text>
+<rect x="1130" y="1400" width="430" height="74" fill="#eef2ff"/>
+<rect x="1130" y="1400" width="430" height="362" fill="none" stroke="#334155" stroke-width="1.6"/>
+<text x="1344.88" y="1426" class="st">«abstract» {sealed}</text>
+<text x="1344.88" y="1455" class="cn" font-style="italic">Employee</text>
+<line x1="1130" y1="1474" x2="1560" y2="1474" stroke="#334155" stroke-width="1.6"/>
+<text x="1146" y="1498" class="m" text-decoration="underline">- MAX_SALARY : double = 1.0E10</text>
+<text x="1146" y="1522" class="m">- name : String</text>
+<text x="1146" y="1546" class="m">- salary : double</text>
+<line x1="1130" y1="1558" x2="1560" y2="1558" stroke="#334155" stroke-width="1.6"/>
+<text x="1146" y="1582" class="m"># Employee(name: String, salary: double)</text>
+<text x="1146" y="1606" class="m" text-decoration="underline">- validateSalary(salaryValue: double) : void</text>
+<text x="1146" y="1630" class="m" font-style="italic">+ getRole() : String</text>
+<text x="1146" y="1654" class="m">+ getName() : String</text>
+<text x="1146" y="1678" class="m">+ getSalary() : double</text>
+<text x="1146" y="1702" class="m">+ withRaise(percent: double) : Employee</text>
+<text x="1146" y="1726" class="m" font-style="italic"># withSalary(salary: double) : Employee</text>
+<text x="1146" y="1750" class="m">+ toString() : String</text>
+<rect x="930" y="2020" width="403" height="74" fill="#eef2ff"/>
+<rect x="930" y="2020" width="403" height="176" fill="none" stroke="#334155" stroke-width="1.6"/>
+<text x="1131.32" y="2046" class="st">«final»</text>
+<text x="1131.32" y="2075" class="cn">Developer</text>
+<line x1="930" y1="2094" x2="1333" y2="2094" stroke="#334155" stroke-width="1.6"/>
+<line x1="930" y1="2112" x2="1333" y2="2112" stroke="#334155" stroke-width="1.6"/>
+<text x="946" y="2136" class="m">+ Developer(name: String, salary: double)</text>
+<text x="946" y="2160" class="m"># withSalary(salary: double) : Developer</text>
+<text x="946" y="2184" class="m">+ getRole() : String</text>
+<rect x="1540" y="2020" width="385" height="74" fill="#eef2ff"/>
+<rect x="1540" y="2020" width="385" height="176" fill="none" stroke="#334155" stroke-width="1.6"/>
+<text x="1732.28" y="2046" class="st">«final»</text>
+<text x="1732.28" y="2075" class="cn">Manager</text>
+<line x1="1540" y1="2094" x2="1925" y2="2094" stroke="#334155" stroke-width="1.6"/>
+<line x1="1540" y1="2112" x2="1925" y2="2112" stroke="#334155" stroke-width="1.6"/>
+<text x="1556" y="2136" class="m">+ Manager(name: String, salary: double)</text>
+<text x="1556" y="2160" class="m"># withSalary(salary: double) : Manager</text>
+<text x="1556" y="2184" class="m">+ getRole() : String</text>
+<path d="M1046,136 L1046,200" fill="none" stroke="#334155" stroke-width="1.6" stroke-dasharray="8,6" marker-end="url(#open)"/>
+<text x="1056" y="173" class="lb" text-anchor="start">«create»</text>
+<path d="M1212,60 L2077,60 L2077,2108 L1925,2108" fill="none" stroke="#334155" stroke-width="1.6" stroke-dasharray="8,6" marker-end="url(#open)"/>
+<text x="2085" y="1084" class="lb" text-anchor="start">«create»</text>
+<path d="M2077,2108 L2077,2246 L1131,2246 L1131,2196" fill="none" stroke="#334155" stroke-width="1.6" stroke-dasharray="8,6" marker-end="url(#open)"/>
+<circle cx="2076.88" cy="2108" r="3.5" fill="#334155"/>
+<text x="1141" y="2238" class="lb">«create»</text>
+<path d="M880,321 L404,321 L404,520" fill="none" stroke="#334155" stroke-width="1.6" marker-end="url(#open)"/>
+<text x="414" y="510" class="lb" text-anchor="start">-service 1</text>
+<path d="M1337,321 L1788,321 L1788,520" fill="none" stroke="#334155" stroke-width="1.6" marker-end="url(#open)"/>
+<text x="1798" y="510" class="lb" text-anchor="start">-printer 1</text>
+<path d="M880,240 L20,240 L20,1450 L50,1450" fill="none" stroke="#334155" stroke-width="1.6" stroke-dasharray="8,6" marker-end="url(#open)"/>
+<text x="28" y="820" class="lb" text-anchor="start">«create»</text>
+<path d="M1300,442 L1300,1040 L1400,1040" fill="none" stroke="#334155" stroke-width="1.6" stroke-dasharray="8,6" marker-end="url(#open)"/>
+<text x="1390" y="1030" class="lb" text-anchor="end">«create»</text>
+<path d="M318,788 L318,1000" fill="none" stroke="#334155" stroke-width="1.6" marker-end="url(#open)"/>
+<text x="328" y="990" class="lb" text-anchor="start">-repository 1</text>
+<path d="M719,718 L1270,718 L1270,1120 L1400,1120" fill="none" stroke="#334155" stroke-width="1.6" stroke-dasharray="8,6" marker-end="url(#open)"/>
+<text x="1390" y="1110" class="lb" text-anchor="end">«create»</text>
+<path d="M719,758 L1240,758 L1240,1400" fill="none" stroke="#334155" stroke-width="1.6" stroke-dasharray="8,6" marker-end="url(#open)"/>
+<text x="1250" y="1340" class="lb" text-anchor="start">«use»</text>
+<path d="M547,1112 L1170,1112 L1170,1400" fill="none" stroke="#334155" stroke-width="1.6" stroke-dasharray="8,6" marker-end="url(#open)"/>
+<text x="1180" y="1370" class="lb" text-anchor="start">«use»</text>
+<path d="M318,1420 L318,1224" fill="none" stroke="#334155" stroke-width="1.6" stroke-dasharray="8,6" marker-end="url(#tri)"/>
+<path d="M570,1562 L1130,1562" fill="none" stroke="#334155" stroke-width="1.6" marker-end="url(#open)" marker-start="url(#dia)"/>
+<text x="1120" y="1552" class="lb" text-anchor="end">0..*</text>
+<text x="594" y="1586" class="lb">employeesByName</text>
+<path d="M1579,836 L1579,1000" fill="none" stroke="#334155" stroke-width="1.6" stroke-dasharray="8,6" marker-end="url(#open)"/>
+<text x="1589" y="923" class="lb" text-anchor="start">«use»</text>
+<path d="M1480,1194 L1480,1400" fill="none" stroke="#334155" stroke-width="1.6" marker-end="url(#open)" marker-start="url(#dia)"/>
+<text x="1490" y="1388" class="lb" text-anchor="start">-employees 0..*</text>
+<path d="M1131,2020 L1131,1960 L1732,1960 L1732,2020" fill="none" stroke="#334155" stroke-width="1.6"/>
+<path d="M1345,1960 L1345,1762" fill="none" stroke="#334155" stroke-width="1.6" marker-end="url(#tri)"/>
+<rect x="60" y="1850" width="560" height="260" fill="#ffffff" stroke="#94a3b8" stroke-width="1.2"/>
+<text x="80" y="1882" class="lh">Legend</text>
+<path d="M90,1920 L230,1920" fill="none" stroke="#334155" stroke-width="1.6" marker-end="url(#tri)"/>
+<text x="260" y="1925" class="lb">inheritance (extends)</text>
+<path d="M90,1960 L230,1960" fill="none" stroke="#334155" stroke-width="1.6" stroke-dasharray="8,6" marker-end="url(#tri)"/>
+<text x="260" y="1965" class="lb">realization (implements)</text>
+<path d="M90,2000 L230,2000" fill="none" stroke="#334155" stroke-width="1.6" marker-end="url(#open)" marker-start="url(#dia)"/>
+<text x="260" y="2005" class="lb">aggregation: holds references</text>
+<path d="M90,2040 L230,2040" fill="none" stroke="#334155" stroke-width="1.6" marker-end="url(#open)"/>
+<text x="260" y="2045" class="lb">association (field)</text>
+<path d="M90,2080 L230,2080" fill="none" stroke="#334155" stroke-width="1.6" stroke-dasharray="8,6" marker-end="url(#open)"/>
+<text x="260" y="2085" class="lb">dependency: «create» / «use»</text>
+<text x="2196.88" y="2286" class="lb" text-anchor="end">package ems — Employee Management System</text>
+</svg>
