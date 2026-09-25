@@ -60,4 +60,23 @@ public abstract sealed class Employee permits Developer, Manager {
     public String toString() {
         return getRole() + "{name=" + name + ", salary=" + salary + "}";
     }
+
+    @Override
+    public final boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        // safely cast cause we checked the class above
+        Employee oCasted = (Employee) o;
+        return name.equals(oCasted.name)
+                && Double.compare(salary, oCasted.salary) == 0;
+    }
+
+    @Override
+    public final int hashCode() {
+        return Objects.hash(getClass(), name, salary);
+    }
 }
