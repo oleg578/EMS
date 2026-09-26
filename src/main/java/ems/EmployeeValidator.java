@@ -23,17 +23,15 @@ public class EmployeeValidator {
      * Throws an IllegalArgumentException if the provided salary value is not within the range.
      *
      * @param salaryValue the salary value to be validated
-     * @return the validated salary value
      * @throws IllegalArgumentException if the specified salaryValue is not within the range
      */
-    public static Double validateSalary(double salaryValue) {
+    public static void validateSalary(double salaryValue) {
         if (salaryValue <= 0) {
             throw new IllegalArgumentException("salary must be positive after rounding to cents, got: " + salaryValue);
         }
         if (salaryValue >= MAX_SALARY) {
             throw new IllegalArgumentException("salary must be less than " + MAX_SALARY + ", got: " + salaryValue);
         }
-        return salaryValue;
     }
 
     /**
