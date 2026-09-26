@@ -10,9 +10,6 @@ public abstract sealed class Employee permits Developer, Manager {
 
     protected Employee(String name, double salary) {
         EmployeeValidator.validateName(name);
-        if (!Double.isFinite(salary)) {
-            throw new IllegalArgumentException("salary must be a finite number, got: " + salary);
-        }
         EmployeeValidator.isFiniteSalary(salary);
         double roundedSalary = EmployeeUtils.roundSalary(salary);
         EmployeeValidator.validateSalary(roundedSalary);
