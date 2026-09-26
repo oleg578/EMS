@@ -17,7 +17,6 @@ hs_err_pid*
 replay_pid*
 
 # IntelliJ IDEA
-.idea/
 *.iws
 *.ipr
 out/
