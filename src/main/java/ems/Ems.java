@@ -1,14 +1,15 @@
 package ems;
 
 import java.util.List;
+import java.util.Objects;
 
 public final class Ems {
     private final EmployeeService service;
     private final PayrollPrinter printer;
 
-    public Ems() {
-        service = new EmployeeService(new InMemoryEmployeeRepository());
-        printer = new PayrollPrinter(System.out);
+    public Ems(EmployeeService service, PayrollPrinter printer) {
+        this.service = Objects.requireNonNull(service, "service must not be null");
+        this.printer = Objects.requireNonNull(printer, "printer must not be null");
     }
 
     public Ems loadStaff(List<Employee> employeeList) {

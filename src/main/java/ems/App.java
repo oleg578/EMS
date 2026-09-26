@@ -14,8 +14,11 @@ public class App {
                 new Manager("Carol", 7000.00),
                 new Manager("Dave", 6500.00)
         ));
+        //create service and printer
+        EmployeeService service = new EmployeeService(new InMemoryEmployeeRepository());
+        PayrollPrinter printer = new PayrollPrinter(System.out);
         // Initializing Employee Management System...
-        Ems ems = new Ems();
+        Ems ems = new Ems(service, printer);
         // Running Employee Management System...
         ems.loadStaff(staff).run();
     }
