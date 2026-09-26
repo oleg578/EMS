@@ -36,8 +36,8 @@ public abstract sealed class Employee permits Developer, Manager {
         if (!Double.isFinite(percent) || percent <= 0) {
             throw new IllegalArgumentException("raise percent must be a positive finite number, got: " + percent);
         }
-        // The constructor rounds to cents and validates the limit
-        return withSalary(salary * (1 + percent / 100));
+        double raisedSalary = EmployeeUtils.roundSalary(salary * (1 + percent / 100.0));
+        return withSalary(raisedSalary);
     }
     /** Creates an employee of the same role and name with the given salary. */
     protected abstract Employee withSalary(double salary);
