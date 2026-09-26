@@ -10,6 +10,13 @@ public interface EmployeeRepository {
     void add(Employee employee);
 
     /**
+     * Adds several employees atomically: either all are saved or none.
+     *
+     * @throws IllegalArgumentException if any name already exists or repeats within the list; nothing is saved then
+     */
+    void addAll(List<Employee> employees);
+
+    /**
      * Persists changes of an existing employee.
      *
      * @throws IllegalArgumentException if no employee with this name exists or the role differs

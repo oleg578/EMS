@@ -1,10 +1,12 @@
 package ems;
 
+import java.util.HashSet;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
+import java.util.Set;
 
 public class InMemoryEmployeeRepository implements EmployeeRepository {
 
@@ -16,6 +18,23 @@ public class InMemoryEmployeeRepository implements EmployeeRepository {
         Objects.requireNonNull(employee, "employee must not be null");
         if (employeesByName.putIfAbsent(employee.getName(), employee) != null) {
             throw new IllegalArgumentException("employee already exists: " + employee.getName());
+        }
+    }
+
+    @Override
+    public void addAll(List<Employee> employees) {
+        Objects.requireNonNull(employees, "employees must not be null");
+        // Validate everything first, so a failure leaves the map untouched
+        Set<String> newNames = new HashSet<>();
+        for (Employee employee : employees) {
+            Objects.requireNonNull(employee, "employee must not be null");
+            String name = employee.getName();
+            if (employeesByName.containsKey(name) || !newNames.add(name)) {
+                throw new IllegalArgumentException("employee already exists: " + name);
+            }
+        }
+        for (Employee employee : employees) {
+            employeesByName.put(employee.getName(), employee);
         }
     }
 

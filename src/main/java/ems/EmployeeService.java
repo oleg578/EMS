@@ -14,6 +14,11 @@ public class EmployeeService {
     public void addEmployee(Employee employee) {
         repository.add(employee);
     }
+
+    /** Adds all employees or none. */
+    public void addEmployees(List<Employee> employees) {
+        repository.addAll(employees);
+    }
     //TODO: make  a desition for delete this method or use it
     @Deprecated
     public List<Employee> getEmployees() {

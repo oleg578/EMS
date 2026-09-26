@@ -12,8 +12,9 @@ public final class Ems {
         this.printer = Objects.requireNonNull(printer, "printer must not be null");
     }
 
+    /** Adds all employees or none; fails if any name is already loaded or repeats in the list. */
     public Ems loadStaff(List<Employee> employeeList) {
-        employeeList.forEach(service::addEmployee);
+        service.addEmployees(employeeList);
         return this;
     }
 
