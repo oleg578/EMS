@@ -9,10 +9,10 @@ public class App {
         System.out.println("Starting Employee Management System...");
         // Loading staff...
         List<Employee> staff = new ArrayList<>(List.of(
-                new Developer("Alice", 5000.575),
-                new Developer("Bob", 4500.00),
+                new Developer("Alice", 5000.00089),
+                new Developer("Bob", 4000.00),
                 new Manager("Carol", 7000.00),
-                new Manager("Dave", 6500.00)
+                new Manager("Dave", 6000.00)
         ));
         //create service and printer
         EmployeeService service = new EmployeeService(new InMemoryEmployeeRepository());

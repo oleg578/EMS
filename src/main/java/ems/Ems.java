@@ -18,17 +18,21 @@ public final class Ems {
     }
 
     private void raise() {
-        service.giveRaise("Alice", 10.00);
         service.giveRaiseToAll(5.00);
     }
 
     public void run() {
         printer.print(service.getPayroll(), "\n=== Payroll ===");
+        service.giveRaise("Alice", 10.00);
+        printer.print(
+                service.getPayroll(),
+                "\n=== Payroll after raises Alice +10% ===");
+
         raise();
 
         printer.print(
                 service.getPayroll(),
-                "\n=== Payroll after raises (Alice +10%, everyone +5%) ===");
+                "\n=== Payroll after raises everyone +5% ===");
 
         printer.print(
                 new Payroll(
