@@ -2,6 +2,7 @@ package ems;
 
 import java.util.Objects;
 
+
 public abstract sealed class Employee permits Developer, Manager {
 
     private static final double MAX_SALARY = 10_000_000_000.00; // not for Venezuela! :)
@@ -9,26 +10,15 @@ public abstract sealed class Employee permits Developer, Manager {
     private final double salary;
 
     protected Employee(String name, double salary) {
-        Objects.requireNonNull(name, "name must not be null");
-        if (name.isBlank()) {
-            throw new IllegalArgumentException("name must not be blank");
-        }
+        EmployeeValidator.validateName(name);
         if (!Double.isFinite(salary)) {
             throw new IllegalArgumentException("salary must be a finite number, got: " + salary);
         }
-        double roundedSalary = Math.round(salary * 100.00) / 100.00;
-        validateSalary(roundedSalary);
+        EmployeeValidator.isFiniteSalary(salary);
+        double roundedSalary = EmployeeUtils.roundSalary(salary);
+        EmployeeValidator.validateSalary(roundedSalary, MAX_SALARY);
         this.name = name;
         this.salary = roundedSalary;
-    }
-
-    private static void validateSalary(double salaryValue) {
-        if (salaryValue <= 0) {
-            throw new IllegalArgumentException("salary must be positive after rounding to cents, got: " + salaryValue);
-        }
-        if (salaryValue >= MAX_SALARY) {
-            throw new IllegalArgumentException("salary must be less than " + MAX_SALARY + ", got: " + salaryValue);
-        }
     }
 
     public abstract String getRole();
