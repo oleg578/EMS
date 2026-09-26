@@ -18,11 +18,10 @@ replay_pid*
 
 # IntelliJ IDEA
 .idea/
-*.iml
 *.iws
 *.ipr
 out/
-docs/
+/docs/
 
 # Eclipse
 .classpath
@@ -41,5 +40,5 @@ Thumbs.db
 .env
 .env.*
 
-test/
+/test/
 .run/
