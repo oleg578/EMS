@@ -25,6 +25,7 @@ public class PayrollPrinter implements PayrollReporter {
         this.out = Objects.requireNonNull(out, "out must not be null");
     }
 
+    @Override
     public void print(Payroll payroll, String title) {
         Objects.requireNonNull(payroll, "payroll must not be null");
         out.println(title);
