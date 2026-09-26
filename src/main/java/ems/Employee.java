@@ -41,7 +41,7 @@ public abstract sealed class Employee permits Developer, Manager {
         return salary;
     }
     /**
-     * Returns a copy of this employee with the salary raised by the given percentage, e.g. 10 means +10%.
+     * Returns a copy of this employee with the salary raised by the given percentage, e.g., 10 means +10%.
      * This employee is not changed.
      *
      * @throws IllegalArgumentException if the percent is invalid or the new salary exceeds the limit
