@@ -38,5 +38,3 @@ Thumbs.db
 # Secrets
 .env
 .env.*
-
-.run/
