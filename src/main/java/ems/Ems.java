@@ -35,14 +35,9 @@ public final class Ems {
                 service.getPayroll(),
                 "\n=== Payroll after raises everyone +5% ===");
 
-        printer.print(
-                new Payroll(
-                        List.copyOf(service.getEmployeesByRole(Manager.class))),
-                "\n=== Managers ===");
+        printer.print(service.getPayrollByRole(Manager.class), "\n=== Managers ===");
 
-        printer.print(
-                new Payroll(List.copyOf(service.getEmployeesByRole(Developer.class))),
-                "\n=== Developers ===");
+        printer.print(service.getPayrollByRole(Developer.class), "\n=== Developers ===");
     }
 
 }

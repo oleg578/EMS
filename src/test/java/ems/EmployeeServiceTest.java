@@ -111,4 +111,16 @@ class EmployeeServiceTest {
                 () -> service.addEmployees(List.of(new Developer("Dave", 100), new Manager("Alice", 100))));
         assertEquals(before, service.getEmployeesByRole(Employee.class));
     }
+
+    @Test
+    void shouldIncludeOnlyGivenRoleWhenBuildingPayrollByRole() {
+        Payroll payroll = service.getPayrollByRole(Developer.class);
+        assertEquals(List.of("Alice", "Bob"), payroll.employees().stream().map(Employee::getName).toList());
+        assertEquals(1500.0, payroll.total(), 1e-9);
+    }
+
+    @Test
+    void shouldRejectNullRoleWhenBuildingPayrollByRole() {
+        assertThrows(NullPointerException.class, () -> service.getPayrollByRole(null));
+    }
 }

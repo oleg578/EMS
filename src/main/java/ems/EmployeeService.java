@@ -38,6 +38,11 @@ public class EmployeeService {
         return new Payroll(repository.findAll());
     }
 
+    /** Returns the payroll of the given role only, e.g. {@code getPayrollByRole(Manager.class)}. */
+    public Payroll getPayrollByRole(Class<? extends Employee> role) {
+        return new Payroll(List.copyOf(getEmployeesByRole(role)));
+    }
+
     /** Gives a raise to the employee with the given name. Fails if not found. */
     public void giveRaise(String name, double percent) {
         Employee employee = repository.findByName(name)
