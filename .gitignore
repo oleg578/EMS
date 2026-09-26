@@ -40,5 +40,5 @@ Thumbs.db
 .env
 .env.*
 
-/test/
+/src/test/
 .run/
