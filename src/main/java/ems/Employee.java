@@ -5,7 +5,6 @@ import java.util.Objects;
 
 public abstract sealed class Employee permits Developer, Manager {
 
-    private static final double MAX_SALARY = 10_000_000_000.00; // not for Venezuela! :)
     private final String name;
     private final double salary;
 
@@ -16,7 +15,7 @@ public abstract sealed class Employee permits Developer, Manager {
         }
         EmployeeValidator.isFiniteSalary(salary);
         double roundedSalary = EmployeeUtils.roundSalary(salary);
-        EmployeeValidator.validateSalary(roundedSalary, MAX_SALARY);
+        EmployeeValidator.validateSalary(roundedSalary);
         this.name = name;
         this.salary = roundedSalary;
     }

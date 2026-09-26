@@ -3,6 +3,7 @@ package ems;
 import java.util.Objects;
 
 public class EmployeeValidator {
+    private static final double MAX_SALARY = 10_000_000_000.00; // not for Venezuela! :)
     /**
      * Validates that the given name is not null and not blank.
      * Throws an IllegalArgumentException if the provided name is null or blank.
@@ -22,16 +23,15 @@ public class EmployeeValidator {
      * Throws an IllegalArgumentException if the provided salary value is not within the range.
      *
      * @param salaryValue the salary value to be validated
-     * @param maxValue the maximum allowed salary value
      * @return the validated salary value
      * @throws IllegalArgumentException if the specified salaryValue is not within the range
      */
-    public static Double validateSalary(double salaryValue, double maxValue) {
+    public static Double validateSalary(double salaryValue) {
         if (salaryValue <= 0) {
             throw new IllegalArgumentException("salary must be positive after rounding to cents, got: " + salaryValue);
         }
-        if (salaryValue >= maxValue) {
-            throw new IllegalArgumentException("salary must be less than " + maxValue + ", got: " + salaryValue);
+        if (salaryValue >= MAX_SALARY) {
+            throw new IllegalArgumentException("salary must be less than " + MAX_SALARY + ", got: " + salaryValue);
         }
         return salaryValue;
     }
