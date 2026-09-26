@@ -5,9 +5,9 @@ import java.util.Objects;
 
 public final class Ems {
     private final EmployeeService service;
-    private final PayrollPrinter printer;
+    private final PayrollReporter printer;
 
-    public Ems(EmployeeService service, PayrollPrinter printer) {
+    public Ems(EmployeeService service, PayrollReporter printer) {
         this.service = Objects.requireNonNull(service, "service must not be null");
         this.printer = Objects.requireNonNull(printer, "printer must not be null");
     }

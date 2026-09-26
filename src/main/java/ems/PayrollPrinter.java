@@ -4,8 +4,10 @@ import java.io.PrintStream;
 import java.util.Locale;
 import java.util.Objects;
 
-/** Prints employees as a payroll table followed by a total line. */
-public class PayrollPrinter {
+/**
+ * Prints employees as a payroll table followed by a total line.
+ */
+public class PayrollPrinter implements PayrollReporter {
 
     private static final int ROLE_WIDTH = 20;
     private static final int NAME_WIDTH = 20;
